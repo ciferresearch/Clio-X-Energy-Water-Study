@@ -1,0 +1,6 @@
+# MATLAB run output created inside src by run_all
+src/results/
+# Python and editor clutter
+__pycache__/
+*.asv
+.DS_Store
