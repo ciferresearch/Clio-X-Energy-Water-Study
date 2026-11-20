@@ -4,13 +4,13 @@ This repository contains the MATLAB simulation, scenario parameters, and experim
 
 The study asks whether showing the estimated electricity and water use of a compute job helps a user choose a provider when sustainability is their stated priority. We investigate this question through a Monte Carlo simulation of provider choices. All selection rates reported here describe simulated decisions. A study with archival professionals is planned as a separate evaluation.
 
-# Clio-X Resource Transparency Simulator (MATLAB), version 2.1
+## Clio-X Resource Transparency Simulator (MATLAB), version 2.1
 
 This package simulates the Clio-X provider-choice experiment described in the IEEE CAS draft paper. It links the paper's transaction-level estimation method to a simulated, randomised choice experiment, with a Monte Carlo power analysis on top.
 
 **Requirements:** MATLAB R2020b or newer, with no toolboxes. The GUI needs App Designer components. All core functions also run in GNU Octave.
 
-## Quick start
+### Quick start
 
 ```matlab
 cd CLIOX_Sim
@@ -25,7 +25,7 @@ The GUI has to be opened in the MATLAB desktop.
 
 Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
 
-## What is simulated
+### What is simulated
 
 1. **Paper's estimation method (Sec. III-A)**
    - IT electricity is allocated over telemetry intervals: `E_IT = Σ_k P_k · Δt_k · s_k`. Intervals are `dtS` long, and the final interval can be partial.
@@ -58,7 +58,7 @@ Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
    - Simulated telemetry is used to compare the pre-execution estimate with the post-execution estimate.
    - It also shows the unobservable "actual" water, which illustrates the accounting error of using an annual-average WUE.
 
-## Built-in scenarios (synthetic values)
+### Built-in scenarios (synthetic values)
 
 | Scenario | Purpose |
 |---|---|
@@ -69,7 +69,7 @@ Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
 | Missing WUE | The truly best provider does not report WUE |
 | Shared GPU | Shared pools, fractional shares and different run times |
 
-## GUI tabs
+### GUI tabs
 
 **Left panel**
 - **Providers**: an editable table (IT power, duration, share, PUE, WUE, cost), with add/remove rows.
@@ -88,7 +88,7 @@ Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
 6. Sensitivity (one-at-a-time sweep of any parameter, with the same seed for every value)
 7. Summary & log
 
-## Files
+### Files
 
 | File | Role |
 |---|---|
@@ -105,18 +105,18 @@ Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
 | `cliox_gui.m` | GUI |
 | `run_all.m` | Batch run for the paper |
 
-## Interpretation
+### Interpretation
 
 - Attention and beta are **assumptions**. The simulation shows their consequences and how many participants a real study would need to detect them. It does not show that real users behave this way.
 - All provider values are synthetic.
 - A later randomised study with GLAM professionals is needed to estimate the real behavioural effect.
 
-## Changes in version 2.1
+### Changes in version 2.1
 
 - Receipts now report the effective / annual-average PUE and WUE multipliers of their single random draw (`receipts.txt`, `receipts.csv`).
 - New `cliox_receipt_gap.m`: the distribution of the receipt accounting gap over 10^6 draws, written by `run_all` to `receipt_gap.csv` (median, 95th and 99th percentiles). The paper quotes these instead of a single draw.
 
-## Changes in version 2.0
+### Changes in version 2.0
 
 - Added PUE and facility electricity (`E_fac = E_IT × PUE`), matching the interface (Figs. 1–2). Water still uses IT electricity.
 - Ratings and the ground truth use facility electricity by default; `IT` reproduces version 1.x.
@@ -125,7 +125,7 @@ Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
 - Effective-PUE uncertainty (`uncert.pueCV`), receipts with facility electricity, GUI fields for all of the above.
 - "Labels" renamed "Rating" to avoid confusion with the interface's quality labels.
 
-## Word-paper figures (Python, MATLAB style)
+### Word-paper figures (Python, MATLAB style)
 
 `paper_figures/make_word_figures.py` redraws Figs. 3-6 of the Word paper from a `run_all` results
 folder in the original MATLAB style, as 600-dpi PNG and vector PDF:
@@ -137,7 +137,7 @@ python3 paper_figures/make_word_figures.py results/<timestamp> <output_folder>
 It needs Python 3 with numpy, scipy and matplotlib. Fig. 6 also needs the receipt intervals; create
 them once in MATLAB with `export_receipt_intervals('results/<timestamp>')`.
 
-## Paper figures (Python)
+### Paper figures (Python)
 
 `paper_figures/make_figures.py` redraws the paper's result figures (Figs. 3–5 of the Overleaf
 version) as vector PDFs from a `run_all` results folder:
