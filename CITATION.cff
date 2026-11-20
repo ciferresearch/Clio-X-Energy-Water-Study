@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper below."
+title: "Clio-X Energy and Water Study: simulation code and results"
+authors:
+  - family-names: Nakamura
+    given-names: Satoru
+    affiliation: "Historiographical Institute, The University of Tokyo"
+  - family-names: Laatikainen
+    given-names: Gabriella
+    affiliation: "VTT Technical Research Centre of Finland"
+    orcid: "https://orcid.org/0000-0002-0647-5176"
+  - family-names: Khodaiemehr
+    given-names: Hassan
+    affiliation: "School of Engineering, University of British Columbia"
+    orcid: "https://orcid.org/0000-0002-0489-8546"
+  - family-names: Lemieux
+    given-names: Victoria
+    affiliation: "Institute for Computing, Information, and Cognitive Systems, University of British Columbia"
+    orcid: "https://orcid.org/0000-0003-1339-6289"
+repository-code: "https://github.com/ciferresearch/Clio-X-Energy-Water-Study"
+license: AGPL-3.0
+version: "2.1"
+preferred-citation:
+  type: conference-paper
+  title: "Making Archival AI Resource Use Visible: A Framework for Transaction-Level Energy and Water Estimation in Clio-X"
+  authors:
+    - family-names: Nakamura
+      given-names: Satoru
+    - family-names: Laatikainen
+      given-names: Gabriella
+    - family-names: Khodaiemehr
+      given-names: Hassan
+    - family-names: Lemieux
+      given-names: Victoria
+  collection-title: "2026 IEEE International Conference on Big Data (BigData), 11th Workshop on Computational Archival Science (CAS)"
+  conference:
+    name: "2026 IEEE International Conference on Big Data (BigData)"
+    city: Phoenix
+    region: AZ
+    country: US
+  year: 2026

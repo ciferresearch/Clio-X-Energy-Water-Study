@@ -1,26 +1,45 @@
 # Clio-X-Energy-Water-Study
 
-This repository contains the MATLAB simulation, scenario parameters, and experimental results accompanying *Making Archival AI Resource Use Visible: A Framework for Transaction-Level Energy and Water Estimation in Clio-X* by Satoru Nakamura, Historiographical Institute, The University of Tokyo Tokyo, Japan, nakamura.satoru@mail.u-tokyo.ac.jp; Gabriella Laatikainen, VTT Technical Research Centre of Finland, Jyväskylä, Finland, 0000-0002-0647-5176; Hassan Khodaiemehr, School of Engineering, University of British Columbia, Kelowna, Canada, 0000-0002-0489-8546; and Victoria Lemieux, Institute for Computing, Information, and Cognitive Systems, University of British Columbia, Vancouver, Canada, 0000-0003-1339-6289.
+This repository contains the MATLAB simulation, scenario parameters and results accompanying the paper
+
+> S. Nakamura, G. Laatikainen, H. Khodaiemehr and V. Lemieux, "Making Archival AI Resource Use Visible: A Framework for Transaction-Level Energy and Water Estimation in Clio-X," in *Proc. 11th Workshop on Computational Archival Science (CAS), 2026 IEEE International Conference on Big Data (BigData)*, Phoenix, AZ, USA, Dec. 2026 (accepted).
+
+**Authors**
+
+- Satoru Nakamura, Historiographical Institute, The University of Tokyo, Tokyo, Japan (nakamura.satoru@mail.u-tokyo.ac.jp)
+- Gabriella Laatikainen, VTT Technical Research Centre of Finland, Jyväskylä, Finland (ORCID [0000-0002-0647-5176](https://orcid.org/0000-0002-0647-5176))
+- Hassan Khodaiemehr, School of Engineering, University of British Columbia, Kelowna, Canada (ORCID [0000-0002-0489-8546](https://orcid.org/0000-0002-0489-8546))
+- Victoria Lemieux, Institute for Computing, Information, and Cognitive Systems, University of British Columbia, Vancouver, Canada (ORCID [0000-0003-1339-6289](https://orcid.org/0000-0003-1339-6289))
 
 The study asks whether showing the estimated electricity and water use of a compute job helps a user choose a provider when sustainability is their stated priority. We investigate this question through a Monte Carlo simulation of provider choices. All selection rates reported here describe simulated decisions. A study with archival professionals is planned as a separate evaluation.
 
+## Repository layout
+
+| Folder | Contents |
+|---|---|
+| `src/` | MATLAB simulator: all functions, the batch script `run_all.m`, the GUI `cliox_gui.m` and the self-tests |
+| `results/` | Output of the `run_all` run reported in the paper (CSV, MAT, run log, MATLAB figures) |
+| `scripts/` | Python script that redraws the paper's Figs. 3-6 from a results folder |
+
+The files in `results/` were produced in MATLAB with `run_all` (version 2.1). All random draws use fixed seeds set in the code, so `run_all` reproduces the files in `results/` exactly; a run in GNU Octave gives slightly different numbers because Octave's random-number generator differs from MATLAB's.
+
 ## Clio-X Resource Transparency Simulator (MATLAB), version 2.1
 
-This package simulates the Clio-X provider-choice experiment described in the IEEE CAS draft paper. It links the paper's transaction-level estimation method to a simulated, randomised choice experiment, with a Monte Carlo power analysis on top.
+This package simulates the Clio-X provider-choice experiment described in the paper. It links the paper's transaction-level estimation method to a simulated, randomised choice experiment, with a Monte Carlo power analysis on top.
 
 **Requirements:** MATLAB R2020b or newer, with no toolboxes. The GUI needs App Designer components. All core functions also run in GNU Octave.
 
 ### Quick start
 
 ```matlab
-cd CLIOX_Sim
+cd src
 cliox_gui          % interactive GUI: every parameter editable, results in tabs
-run_all            % batch run for the paper: all scenarios, figures, CSVs -> results/<timestamp>/
+run_all            % batch run for the paper: all scenarios, figures, CSVs -> src/results/<timestamp>/
 cliox_selftest     % 13 checks against hand calculations (incl. the paper's Granite Cloud example) and statistical theory
 ```
 
-From Cursor or a terminal, run the batch job without a window:
-`matlab -batch "cd('CLIOX_Sim'); run_all"`.
+From a terminal, run the batch job without a window:
+`matlab -batch "cd('src'); run_all"`.
 The GUI has to be opened in the MATLAB desktop.
 
 Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
@@ -125,25 +144,24 @@ Set `QUICK = true` at the top of `run_all.m` for a fast smoke test.
 - Effective-PUE uncertainty (`uncert.pueCV`), receipts with facility electricity, GUI fields for all of the above.
 - "Labels" renamed "Rating" to avoid confusion with the interface's quality labels.
 
-### Word-paper figures (Python, MATLAB style)
-
-`paper_figures/make_word_figures.py` redraws Figs. 3-6 of the Word paper from a `run_all` results
-folder in the original MATLAB style, as 600-dpi PNG and vector PDF:
-
-```
-python3 paper_figures/make_word_figures.py results/<timestamp> <output_folder>
-```
-
-It needs Python 3 with numpy, scipy and matplotlib. Fig. 6 also needs the receipt intervals; create
-them once in MATLAB with `export_receipt_intervals('results/<timestamp>')`.
-
 ### Paper figures (Python)
 
-`paper_figures/make_figures.py` redraws the paper's result figures (Figs. 3–5 of the Overleaf
-version) as vector PDFs from a `run_all` results folder:
+`scripts/make_word_figures.py` redraws Figs. 3-6 of the paper from a results folder, in the style of
+the MATLAB figures, as 600-dpi PNG and vector PDF. From the repository root:
 
 ```
-python3 paper_figures/make_figures.py results/<timestamp> <output_folder>
+python3 scripts/make_word_figures.py results <output_folder>
 ```
 
-It needs Python 3 with matplotlib. Copy the PDFs into the Overleaf project's `figures/` folder.
+It needs Python 3 with numpy, scipy and matplotlib. Fig. 6 also needs the receipt's telemetry
+intervals (`results/receipt_1_intervals.csv`, included here). For a new run, create them in MATLAB
+from the `src` folder with `export_receipt_intervals('results/<timestamp>')`.
+
+## How to cite
+
+If you use this code or these results, please cite the paper above. A machine-readable citation is
+in `CITATION.cff`.
+
+## Licence
+
+See `LICENSE`.
