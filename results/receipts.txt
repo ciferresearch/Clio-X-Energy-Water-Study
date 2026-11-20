@@ -1,0 +1,39 @@
+Transaction receipt: Shared GPU pool
+Resource share s: 0.125
+Duration           pre: 180 s   post: 186.4 s (19 telemetry intervals)
+IT electricity     pre: 40.00 Wh  post: 40.56 Wh
+Facility elec.     pre: 46.00 Wh  post: 46.65 Wh
+Water              pre: 16.00 mL  post: 16.23 mL
+PUE used: 1.15 (annual average)
+WUE used: 0.40 L/kWh of IT electricity (annual average; definition: consumption)
+Simulated actual (effective PUE/WUE, unobservable): facility 48.45 Wh, water 11.81 mL
+Effective / annual-average multipliers (single draw): PUE 1.039, WUE 0.728
+Facility electricity = IT electricity x PUE; water = IT electricity x WUE (on-site only;
+excludes recirculating coolant and upstream electricity-generation water).
+
+Transaction receipt: Dedicated GPU
+Resource share s: 1.000
+Duration           pre: 90 s   post: 94.3 s (10 telemetry intervals)
+IT electricity     pre: 30.00 Wh  post: 31.55 Wh
+Facility elec.     pre: 48.00 Wh  post: 50.48 Wh
+Water              pre: 16.50 mL  post: 17.35 mL
+PUE used: 1.60 (annual average)
+WUE used: 0.55 L/kWh of IT electricity (annual average; definition: consumption)
+Simulated actual (effective PUE/WUE, unobservable): facility 52.28 Wh, water 16.45 mL
+Effective / annual-average multipliers (single draw): PUE 1.036, WUE 0.948
+Facility electricity = IT electricity x PUE; water = IT electricity x WUE (on-site only;
+excludes recirculating coolant and upstream electricity-generation water).
+
+Transaction receipt: Fractional GPU
+Resource share s: 0.500
+Duration           pre: 60 s   post: 51.8 s (6 telemetry intervals)
+IT electricity     pre: 26.67 Wh  post: 23.22 Wh
+Facility elec.     pre: 34.67 Wh  post: 30.18 Wh
+Water              pre: 5.33 mL  post: 4.64 mL
+PUE used: 1.30 (annual average)
+WUE used: 0.20 L/kWh of IT electricity (annual average; definition: consumption)
+Simulated actual (effective PUE/WUE, unobservable): facility 32.71 Wh, water 4.44 mL
+Effective / annual-average multipliers (single draw): PUE 1.084, WUE 0.957
+Facility electricity = IT electricity x PUE; water = IT electricity x WUE (on-site only;
+excludes recirculating coolant and upstream electricity-generation water).
+

@@ -1,0 +1,13 @@
+Scenario,DisplayBasis,RatingsDisplayed,EstimatesCorrect,Success_Control,Success_WUE,Success_Numeric,Success_Rating,Power300_NumericVsControl,Power300_RatingVsControl
+"WUE trap",facility,Low/High/Medium,0.9970,0.3333,0.2601,0.4796,0.4946,0.9453,0.9732
+"WUE trap",IT,Low/High/Medium,0.9970,0.3333,0.2601,0.4811,0.4946,0.9485,0.9732
+"PUE trap",facility,Medium/Low/High,0.8522,0.3333,0.4014,0.4172,0.4598,0.4738,0.8420
+"PUE trap",IT,Low/Medium/High,0.1477,0.3333,0.4014,0.3526,0.2902,0.0597,0.4652
+"Dominant",facility,Low/Medium/High,1.0000,0.3333,0.4328,0.4946,0.4953,0.9410,0.9447
+"Dominant",IT,Low/Medium/High,1.0000,0.3333,0.4328,0.4936,0.4953,0.9385,0.9443
+"Trade-off",facility,Medium/Low/High,0.6875,0.3333,0.4127,0.3873,0.4201,0.2330,0.7600
+"Trade-off",IT,Medium/Medium/High,0.6875,0.3333,0.4127,0.3859,0.3739,0.2065,0.0995
+"Missing WUE",facility,N/A/Medium/High,0.0000,0.3333,0.2834,0.2507,0.2798,0.3845,0.1430
+"Missing WUE",IT,N/A/Medium/High,0.0000,0.3333,0.2834,0.2515,0.2798,0.3735,0.1430
+"Shared GPU",facility,Medium/Medium/Low,0.9972,0.3333,0.4877,0.4746,0.4903,0.8778,0.9275
+"Shared GPU",IT,Medium/Medium/Low,0.9972,0.3333,0.4877,0.4708,0.4903,0.8550,0.9265

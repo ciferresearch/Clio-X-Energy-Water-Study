@@ -1,0 +1,4 @@
+Provider,IT_power_kW,Duration_s,Share,PUE,WUE_L_per_kWh,E_IT_Wh,E_facility_Wh,W_mL,RatingBasis,CombinedIndex,Rating,TrueBestFreq
+"Shared GPU pool",6.4,180,0.125,1.1500,0.4000,40.0000,46.0000,16.0000,facility,0.9933,Medium,0.0015
+"Dedicated GPU",1.2,90,1,1.6000,0.5500,30.0000,48.0000,16.5000,facility,1.0300,Medium,0.0013
+"Fractional GPU",3.2,60,0.5,1.3000,0.2000,26.6667,34.6667,5.3333,facility,0.5244,Low,0.9972

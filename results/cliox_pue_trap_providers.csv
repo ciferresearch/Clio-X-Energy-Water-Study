@@ -1,0 +1,4 @@
+Provider,IT_power_kW,Duration_s,Share,PUE,WUE_L_per_kWh,E_IT_Wh,E_facility_Wh,W_mL,RatingBasis,CombinedIndex,Rating,TrueBestFreq
+"Provider A",1.2,90,1,1.9500,0.3000,30.0000,58.5000,9.0000,facility,0.8850,Medium,0.1477
+"Provider B",1.44,90,1,1.1000,0.2600,36.0000,39.6000,9.3600,facility,0.7080,Low,0.8522
+"Provider C",2.4,90,1,1.4000,0.4500,60.0000,84.0000,27.0000,facility,1.7400,High,0.0000

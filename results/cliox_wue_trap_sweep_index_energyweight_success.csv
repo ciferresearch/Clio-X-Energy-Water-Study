@@ -1,0 +1,5 @@
+UsersPerCondition,Condition,MeanSuccess,Lo95,Hi95,MeanChosenElectricity_Wh,MeanChosenWater_mL
+300,"Control",0.3338,0.2800,0.3867,49.2512,14.6204
+300,"WUE only",0.2604,0.2100,0.3100,53.5056,15.2861
+300,"Numeric E & W",0.4804,0.4233,0.5367,43.9218,13.5649
+300,"Rating L/M/H",0.4947,0.4367,0.5500,43.5462,13.4751

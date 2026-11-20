@@ -1,0 +1,29 @@
+Clio-X simulation | scenario: PUE trap | 2026-11-06 12:48:38
+Criterion: combined (truth basis: facility electricity) | 4000 studies per n | alpha 0.05 (two-sided, Holm) | target power 0.90
+
+Pre-execution estimates (E_IT = sum P*dt*s, E_fac = E_IT x PUE, W = E_IT x WUE); rating basis: facility electricity, Eref = 50.0 Wh, Wref = 15.0 mL
+  Provider A       PUE 1.95 WUE 0.30 | E_IT  30.00 Wh  E_fac  58.50 Wh  W   9.00 mL  R  0.89  Medium  true-best 0.15
+  Provider B       PUE 1.10 WUE 0.26 | E_IT  36.00 Wh  E_fac  39.60 Wh  W   9.36 mL  R  0.71  Low     true-best 0.85
+  Provider C       PUE 1.40 WUE 0.45 | E_IT  60.00 Wh  E_fac  84.00 Wh  W  27.00 mL  R  1.74  High    true-best 0.00
+  Estimates identify the true best provider in 85.2% of studies.
+
+Expected success (chooses true lowest-resource provider), chance = 33.3%
+  Control           33.3%   choice probs: 0.33 0.33 0.33 
+  WUE only          40.1%   choice probs: 0.33 0.41 0.26 
+  Numeric E & W     41.7%   choice probs: 0.31 0.43 0.25 
+  Rating L/M/H      46.0%   choice probs: 0.25 0.50 0.25 
+
+Comparisons (power at n = 800; required n for 90% power)
+  WUE only vs Control                diff  +6.8 pp  power 0.744 (benefit 0.743, harm 0.001)  n_req: > 800 (analytic 1493)
+                                     electricity saved +3.489 Wh, water saved +1.363 mL per transaction
+  Numeric E & W vs Control           diff  +8.4 pp  power 0.829 (benefit 0.823, harm 0.006)  n_req: > 800 (analytic 990)
+                                     electricity saved +4.008 Wh, water saved +1.441 mL per transaction
+  Rating L/M/H vs Control            diff +12.7 pp  power 0.976 (benefit 0.852, harm 0.124)  n_req: 381 (analytic 444)
+                                     electricity saved +5.162 Wh, water saved +1.431 mL per transaction
+  Numeric E & W vs WUE only          diff  +1.5 pp  power 0.109 (benefit 0.100, harm 0.009)  n_req: > 800 (analytic 28699)
+                                     electricity saved +0.519 Wh, water saved +0.078 mL per transaction
+  Rating L/M/H vs WUE only           diff  +5.8 pp  power 0.849 (benefit 0.731, harm 0.118)  n_req: > 800 (analytic 2137)
+                                     electricity saved +1.673 Wh, water saved +0.068 mL per transaction
+
+Behavioural parameters (attention, beta) are ASSUMPTIONS; outputs show their consequences
+and detectability, not observed human behaviour. All provider values are synthetic.
