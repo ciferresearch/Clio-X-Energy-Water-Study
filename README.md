@@ -20,6 +20,7 @@ The study asks whether showing the estimated electricity and water use of a comp
 | `src/` | MATLAB simulator: all functions, the batch script `run_all.m`, the GUI `cliox_gui.m` and the self-tests |
 | `results/` | Output of the `run_all` run reported in the paper (CSV, MAT, run log, MATLAB figures) |
 | `scripts/` | Python script that redraws the paper's Figs. 3-6 from a results folder |
+| `prototype/` | Where to find and run the Clio-X interface prototype shown in Figs. 1-2 (code kept in the portal repository) |
 
 The files in `results/` were produced in MATLAB with `run_all` (version 2.1). All random draws use fixed seeds set in the code, so `run_all` reproduces the files in `results/` exactly; a run in GNU Octave gives slightly different numbers because Octave's random-number generator differs from MATLAB's.
 
