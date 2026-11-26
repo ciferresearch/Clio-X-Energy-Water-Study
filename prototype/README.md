@@ -16,8 +16,13 @@ the camera-ready paper and explains how to open the two screens.
 
 | Figure | Screen | Open it |
 |---|---|---|
-| Fig. 1 | An asset page listing four compute environments with their estimated facility electricity and water per job | <https://cliox.ldas.jp/experiment/paper-fig/?env=a> (`env=a`, `b`, `c` or `d` selects the environment) |
+| Fig. 1 | An asset page comparing four compute environments by estimated facility electricity, water, carbon and cost per job | <https://cliox.ldas.jp/asset/did:op:04f79245ba012ab323600b60bb537c865560ca18867025a3d31b38f4560b9787?demo=1&env=a> (`demo=1` puts in the four illustrative environments; `env=a`, `b`, `c` or `d` selects one) |
 | Fig. 2 | The transaction receipt, with the calculation shown step by step | <https://cliox.ldas.jp/experiment/two-condition/?view=receipt&sample=t4a&steps=1> |
+
+`?demo=1` works on any compute asset page; the link uses a public-domain
+sample record (the Declaration of Independence) on the trial node. The
+screenshot in the paper was taken on an earlier sample asset that is no longer
+on the node; the panel and the values are the same.
 
 Code for the two screens, inside the tag:
 
@@ -29,12 +34,14 @@ Code for the two screens, inside the tag:
 
 ## What is real and what is illustrative
 
-**Real:** the page components, the calculation (IT electricity → facility
-electricity with PUE → water with WUE → carbon), the published emission factors,
-and the receipt fingerprint (SHA-256).
+**Real:** the page components, the calculation, the published grid emission
+factors, and the receipt fingerprint (SHA-256). The calculation is: IT
+electricity = pool power × duration × compute share; facility electricity = IT
+electricity × PUE; water = IT electricity × WUE; carbon = facility electricity ×
+grid emission factor.
 
-**Illustrative:** all providers and every input value in the two figures
-(four fictional providers in `content/experiment/trials.json`, the same as task
+**Illustrative:** all providers and every other input value in the two
+figures (four fictional providers in `content/experiment/trials.json`, the same as task
 t4 of the decision exercise), the transaction ID and times. Both screens carry
 a yellow "Illustrative" banner. The numbers in the figures are not measurements
 of real providers.
@@ -55,7 +62,7 @@ npm ci
 NEXT_PUBLIC_METADATACACHE_URI=https://cliox-node.ldas.jp npm start
 ```
 
-Then open <http://localhost:8000/experiment/paper-fig?env=a> (Fig. 1) and
+Then open <http://localhost:8000/asset/did:op:04f79245ba012ab323600b60bb537c865560ca18867025a3d31b38f4560b9787?demo=1&env=a> (Fig. 1) and
 <http://localhost:8000/experiment/two-condition?view=receipt&sample=t4a&steps=1> (Fig. 2).
 `npm start` first generates some network metadata files, then starts the
 development server on port 8000. No wallet is needed. On Node.js 25 or newer,
